@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tutor Study Companion</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* Card style for plans */
+.plans-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.plan-card {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.plan-card h3 {
+  margin-top: 0;
+  color: #4CAF50;
+}
+
+.plan-card p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.plan-card button {
+  background: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.plan-card button:hover {
+  background: #45a049;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Welcome to AI Tutor Study Companion</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-and-conditions.html">Terms & Conditions</a>
+    <a href="refund-policy.html">Refund Policy</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Choose Your Plan</h2>
+  <div class="plans-container">
+    <div class="plan-card">
+      <h3>Basic Plan</h3>
+      <p>₹59</p>
+      <button onclick="alert('Payment integration will be activated after Razorpay API approval')">Pay Now</button>
+    </div>
+
+    <div class="plan-card">
+      <h3>Premium Plan</h3>
+      <p>₹559</p>
+      <button onclick="alert('Payment integration will be activated after Razorpay API approval')">Pay Now</button>
+    </div>
+  </div>
+  <p style="text-align:center; color:gray;">Payment integration will be activated after Razorpay API approval.</p>
+</main>
+
+<footer>
+  <p>© 2025 AI Tutor Study Companion</p>
+</footer>
+</body>
+</html>
