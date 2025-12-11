@@ -56,6 +56,7 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="shopping-policy.html">Shopping Policy</a>
     <a href="privacy-policy.html">Privacy Policy</a>
     <a href="terms-and-conditions.html">Terms & Conditions</a>
     <a href="refund-policy.html">Refund Policy</a>
@@ -68,17 +69,45 @@
     <div class="plan-card">
       <h3>Basic Plan</h3>
       <p>₹59</p>
-      <button onclick="alert('Payment integration will be activated after Razorpay API approval')">Pay Now</button>
+      <button onclick="payNow('Basic', 59)">Pay Now</button>
     </div>
 
     <div class="plan-card">
       <h3>Premium Plan</h3>
       <p>₹559</p>
-      <button onclick="alert('Payment integration will be activated after Razorpay API approval')">Pay Now</button>
+      <button onclick="payNow('Premium', 559)">Pay Now</button>
     </div>
   </div>
-  <p style="text-align:center; color:gray;">Payment integration will be activated after Razorpay API approval.</p>
+  <p style="text-align:center; color:gray;">Payments are securely processed via Razorpay.</p>
 </main>
+
+<!-- Razorpay script -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+function payNow(planName, amount) {
+  var options = {
+    "key": "YOUR_RAZORPAY_KEY", // Replace with your Razorpay API Key
+    "amount": amount * 100, // Amount in paise
+    "currency": "INR",
+    "name": "AI Tutor Study Companion",
+    "description": planName + " Plan Subscription",
+    "handler": function (response){
+        alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+        // You can redirect to success page or call backend here
+    },
+    "prefill": {
+        "name": "",
+        "email": "",
+        "contact": ""
+    },
+    "theme": {
+        "color": "#4CAF50"
+    }
+  };
+  var rzp = new Razorpay(options);
+  rzp.open();
+}
+</script>
 
 <footer>
   <p>© 2025 AI Tutor Study Companion</p>
